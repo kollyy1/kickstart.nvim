@@ -851,6 +851,12 @@ require('lazy').setup({
 
   {
     'rebelot/kanagawa.nvim',
+    config = function()
+      require('kanagawa').setup {
+        commentStyle = { italic = false },
+        keywordStyle = { italic = false },
+      }
+    end,
     init = function()
       vim.cmd.colorscheme 'kanagawa'
       vim.cmd.hi "Normal guibg='black'"
