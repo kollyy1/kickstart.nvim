@@ -858,11 +858,37 @@ require('lazy').setup({
       }
     end,
     init = function()
-      vim.cmd.colorscheme 'kanagawa'
-      vim.cmd.hi "Normal guibg='black'"
-      vim.cmd.hi "LineNr guibg='#060a0a' "
-      vim.cmd.hi "SignColumn guibg='#060a0a'"
-      vim.cmd.hi "CursorLine guibg='#0f0f0f'"
+      --vim.cmd.colorscheme 'kanagawa'
+      --vim.cmd.hi "Normal guibg='black'"
+      --vim.cmd.hi "LineNr guibg='#060a0a' "
+      --vim.cmd.hi "SignColumn guibg='#060a0a'"
+      --vim.cmd.hi "CursorLine guibg='#0f0f0f'"
+    end,
+  },
+
+  {
+    'sainnhe/everforest',
+    config = function()
+      vim.g.everforest_enable_italic = false
+      vim.g.everforest_background = 'hard'
+    end,
+  },
+
+  {
+    'ribru17/bamboo.nvim',
+    config = function()
+      require('bamboo').setup {
+        code_style = {
+          comments = { italic = false },
+          conditionals = { italic = false },
+          namespaces = { italic = false },
+          parameters = { italic = false },
+        },
+        highlights = {
+          ['@comment'] = { fg = 'grey' },
+        },
+      }
+      require('bamboo').load()
     end,
   },
 
